@@ -24,10 +24,9 @@ public class MySQLTest extends FunctionalTestCase{
 	        runFlowAndExpect("junitflow", "Hello Maven");
 	    }
 	
-	   // run maven-config.xml when testing
-    @Override
+	@Override
     protected String getConfigFile(){
-      return "src/main/app/mysql-maven.xml";
+      return "mysql-maven.xml";
     }
 
 
