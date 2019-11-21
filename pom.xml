@@ -166,7 +166,7 @@
         </dependency>
     </dependencies>
 
-	<repositories>
+	<!-- <repositories>
           <repository>
             <id>Central</id>
             <name>Central</name>
@@ -176,37 +176,20 @@
          <repository>
             <id>mulesoft-releases</id>
             <name>MuleSoft Releases Repository</name>
-            <!-- <url>http://repository.mulesoft.org/releases/</url> -->
-             <url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
+             <url>http://repository.mulesoft.org/releases/</url>
             <layout>default</layout>
         </repository>
-       <!--  <repository>
-            <id>mulesoft-releases</id>
-            <name>MuleSoft Releases Repository</name>
-            <url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
-          <layout>default</layout> 
-        </repository>-->
     </repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>mulesoft-release</id>
             <name>mulesoft release repository</name>
             <layout>default</layout>
-            <!-- <url>http://repository.mulesoft.org/releases/</url>-->
-            <url>https://repository.mulesoft.org/nexus/content/repositories/public</url>
+            <url>http://repository.mulesoft.org/releases/</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
         </pluginRepository> 
-         <!-- <pluginRepository>
-            <id>mulesoft-release</id>
-            <name>mulesoft release repository</name>
-            <layout>default</layout>
-            <url>https://repository.mulesoft.org/nexus-ee/content/repositories/releases-ee/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository> -->
-    </pluginRepositories>
+    </pluginRepositories> -->
 
 </project>
