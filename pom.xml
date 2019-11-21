@@ -173,7 +173,17 @@
             <layout>default</layout>
         </repository>
     </repositories>
-
+    <pluginRepositories>
+        <pluginRepository>
+            <id>mulesoft-release</id>
+            <name>mulesoft release repository</name>
+            <layout>default</layout>
+            <url>http://repository.mulesoft.org/releases/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository> 
+    </pluginRepositories>
 	<!-- <repositories>
           <repository>
             <id>Central</id>
