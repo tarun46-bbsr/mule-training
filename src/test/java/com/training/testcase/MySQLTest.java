@@ -17,7 +17,7 @@ public class MySQLTest extends FunctionalTestCase{
 	}*/
 	
 	   @Test
-	    public void mavenFlowReturnsHelloMaven() throws Exception {
+	    public void junitflowReturnsHelloMaven() throws Exception {
 		// Creation of a MuleClient
 
 		    
