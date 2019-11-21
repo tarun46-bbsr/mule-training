@@ -25,7 +25,7 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
     <flow name="junitflow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/junit" doc:name="HTTP"/>
         <set-property propertyName="#['Content-Type']" value="#['application/json']" doc:name="Property"/>
-        <set-payload value="#['Success']" doc:name="Set Payload"/>
+        <set-payload value="#['Hello Maven']" doc:name="Set Payload"/>
     </flow>
     <flow name="consumeFlow">
         <jms:inbound-endpoint topic="jmsflighttopic" connector-ref="Active_MQ" doc:name="JMS"/>

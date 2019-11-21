@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 import org.mule.api.MuleEvent;
+import org.mule.api.MuleMessage;
+import org.mule.api.client.MuleClient;
 import org.mule.tck.junit4.FunctionalTestCase;
 
 public class MySQLTest extends FunctionalTestCase{
@@ -16,13 +18,16 @@ public class MySQLTest extends FunctionalTestCase{
 	
 	   @Test
 	    public void mavenFlowReturnsHelloMaven() throws Exception {
+		// Creation of a MuleClient
+
+		    
 	        runFlowAndExpect("junitflow", "Hello Maven");
 	    }
 	
 	   // run maven-config.xml when testing
     @Override
     protected String getConfigFile(){
-      return "mysql-maven.xml";
+      return "src/main/app/mysql-maven.xml";
     }
 
 
