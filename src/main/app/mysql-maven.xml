@@ -13,6 +13,11 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
     <http:listener-config name="HTTP_Listener_Configuration" host="0.0.0.0" port="8081" doc:name="HTTP Listener Configuration"/>
     <db:mysql-config name="MySQL_Configuration" host="localhost" port="3306" user="root" password="root@1234" database="mulesoft_training" doc:name="MySQL Configuration"/>
     <jms:activemq-connector name="Active_MQ" username="admin" password="admin" brokerURL="tcp://localhost:61616" validateConnections="true" doc:name="Active MQ"/>
+    <http:request-config name="HTTP_Request_Configuration" host="localhost" port="8081" doc:name="HTTP Request Configuration"/>
+    <flow name="junitflow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/junit" doc:name="HTTP"/>
+        <set-payload value="#['Test']" doc:name="Set Payload"/>
+    </flow>
     <flow name="mysql-mavenFlow">
         <http:listener config-ref="HTTP_Listener_Configuration" path="/mysql" doc:name="HTTP"/>
         <db:select config-ref="MySQL_Configuration" doc:name="Database">
@@ -21,11 +26,6 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
         <json:object-to-json-transformer doc:name="Object to JSON"/>
         <set-property propertyName="#['Content-Type']" value="#['application/json']" doc:name="Property"/>
         <jms:outbound-endpoint topic="jmsflighttopic" connector-ref="Active_MQ" doc:name="JMS"/>
-    </flow>
-    <flow name="junitflow">
-        <http:listener config-ref="HTTP_Listener_Configuration" path="/junit" doc:name="HTTP"/>
-        <set-property propertyName="#['Content-Type']" value="#['application/json']" doc:name="Property"/>
-        <set-payload value="#['Hello Maven']" doc:name="Set Payload"/>
     </flow>
     <flow name="consumeFlow">
         <jms:inbound-endpoint topic="jmsflighttopic" connector-ref="Active_MQ" doc:name="JMS"/>
